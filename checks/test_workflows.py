@@ -15,6 +15,8 @@ def test_cloud_checks_have_no_business_credentials():
     value = load("quality")
     job = value["jobs"]["offline-checks"]
     assert job["runs-on"] == "windows-latest"
+    # 云端Windows默认编码不能可靠输出中文，防止首次CI的编码错误重现。
+    assert job["env"]["PYTHONUTF8"] == "1"
     assert "RUOYI_TEST_TOKEN" not in json.dumps(value)
     assert "config.local.json" not in json.dumps(value)
     assert value["permissions"] == {"contents": "read"}

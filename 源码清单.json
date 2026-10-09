@@ -7,7 +7,7 @@
     },
     {
       "path": ".github/workflows/quality.yml",
-      "sha256": "b3be2409e62c38c4f75de92b661be15ffcbd0df0d1b5f1acbd1dbe11d7c33419"
+      "sha256": "4e35c5711b7c114b883943020839e02bd4788db1eadb8c823c7e40fa498f1201"
     },
     {
       "path": ".gitignore",
@@ -23,7 +23,7 @@
     },
     {
       "path": "checks/test_workflows.py",
-      "sha256": "9970de38bc803fd9a7fd6bc2a4fdb900104a82bab994f374ed59a0a5d021e27a"
+      "sha256": "d8ad861bfcc7b1f05fff2490de70d8524f1a97da86a660472b0f529199e89dae"
     },
     {
       "path": "config.example.json",

@@ -1,5 +1,5 @@
 # 采用JSON兼容的YAML格式；工作流内容可由标准库严格解析。
-# Actions固定提交已按官方仓库版本核对；没有注册运行器或对外发布。
+# Actions固定提交已核对；中文输出显式使用UTF-8，自托管运行器未注册。
 {
   "name": "测试工程质量检查",
   "on": {
@@ -13,6 +13,7 @@
   "jobs": {
     "offline-checks": {
       "runs-on": "windows-latest",
+      "env": {"PYTHONUTF8": "1"},
       "steps": [
         {
           "name": "获取源码",
