@@ -1,0 +1,101 @@
+{
+  "说明": "私有仓库上传文件清单；不含本机配置或原始证据。",
+  "文件": [
+    {
+      "path": ".github/workflows/local-api.yml",
+      "sha256": "1d4c738317e938392938cd62f1f76e35de904a58ec2d30834b72d455187f61e3"
+    },
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha256": "b3be2409e62c38c4f75de92b661be15ffcbd0df0d1b5f1acbd1dbe11d7c33419"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1e0a32fd2a38751b202bbb710ce1208ee7fd89c480e79a32bfb2a540eff56802"
+    },
+    {
+      "path": "checks/test_catalog.py",
+      "sha256": "eb03ed10683501e32f0d6a0cf48d49612bc14ed5c1770fca3ebcf12b892f3857"
+    },
+    {
+      "path": "checks/test_config.py",
+      "sha256": "c10b6eaa32e052287103c35723e1367ca9358f0c5fe2980ad7d09fdd3cc0f32e"
+    },
+    {
+      "path": "checks/test_workflows.py",
+      "sha256": "9970de38bc803fd9a7fd6bc2a4fdb900104a82bab994f374ed59a0a5d021e27a"
+    },
+    {
+      "path": "config.example.json",
+      "sha256": "4c4ae4686c01b4641599757c4d15951c63bdbbfa1b3e625199c22f2c1a651957"
+    },
+    {
+      "path": "config.py",
+      "sha256": "9b0fc80e7451d129db304c3dd610c528cabbe84edda5fca31cf6a5d601e3748e"
+    },
+    {
+      "path": "conftest.py",
+      "sha256": "0f6a3382dea51e9cf5450d3bdde2ff8ab26c88205d44b8496f8112a9ec08652c"
+    },
+    {
+      "path": "core_specs.py",
+      "sha256": "343612bd47e479abf9589a7fd6a5b71224194f7eaafc46e328b7957e3757f0ca"
+    },
+    {
+      "path": "docs/项目结果概览.md",
+      "sha256": "90870f9b8a51e9c5f3d6c7df7994483330018b48afec192e3bcc293fc1500d7c"
+    },
+    {
+      "path": "lab.py",
+      "sha256": "1848d2a77b54fbe5d9dc8973811aed8afc66b06a73841e2404cfe4bd9522e636"
+    },
+    {
+      "path": "pytest.ini",
+      "sha256": "0d48cc4d6f9b7caeeff3636e6d9b0343090dc7964d36f08d6cae20502c106f21"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9221388555500249b3aeabd6b75e93bb415d84046868b7ce4001e58b3460a904"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "1dc3c9de988130beaa646c90bf78c2c8598d1b67a9cff10293e5a55c59a4cf53"
+    },
+    {
+      "path": "tests/test_core_modules.py",
+      "sha256": "62738b896ae5f0ac49f07d81c9e5c575ad73d9887cca2875638e7b8ddfffbdbe"
+    },
+    {
+      "path": "tests/test_local_api.py",
+      "sha256": "8cd363f88d5a06417a812e750c9aae7f874a6a36db1afa381c2721a94a8a237e"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "ab2beecf54c3ad34d649ad465e9e3864a471f54117ec46980b1dee40037c9443"
+    },
+    {
+      "path": "工程检查.py",
+      "sha256": "2f8ea60a940247c3a2c602b936b02caef613f4b38429f49f5ce322cbcc045c97"
+    },
+    {
+      "path": "核对首轮证据.py",
+      "sha256": "a0215b4dea6cfdc81a20a8fc3d4dbeeb0150233a55f956ba1b0d70e8db300172"
+    },
+    {
+      "path": "生成执行摘要.py",
+      "sha256": "0769baef00a4be68fe6d4271ee4ff2eeab819fac4152afe8ff4f8a49ec875fb8"
+    },
+    {
+      "path": "生成迁移清单.py",
+      "sha256": "c5907682de1f13699e5f7bea615d1ecf210ef777ddda8d952333dea11aeada64"
+    },
+    {
+      "path": "运行测试.ps1",
+      "sha256": "e988c9d29fd05e8f928a6bab9c8f9072ead0f3c1fb0de8f687b2123289edd4a6"
+    },
+    {
+      "path": "首轮套件迁移清单.json",
+      "sha256": "f3b2f61bde6423f9cfd7839a4692efc72331d86bed1e4ff923d8d40b5868912a"
+    }
+  ]
+}

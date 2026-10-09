@@ -1,0 +1,77 @@
+# 采用JSON兼容的YAML格式；工作流内容可由标准库严格解析。
+# Actions固定提交已按官方仓库版本核对；没有注册运行器或对外发布。
+{
+  "name": "隔离副本接口测试",
+  "on": {
+    "workflow_dispatch": {
+      "inputs": {
+        "mode": {
+          "description": "ReadOnly只读；Batch整批临时样本测试",
+          "type": "choice",
+          "default": "ReadOnly",
+          "options": [
+            "ReadOnly",
+            "Batch"
+          ]
+        }
+      }
+    }
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "concurrency": {
+    "group": "ruoyi-isolated-api",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "local-api": {
+      "runs-on": [
+        "self-hosted",
+        "Windows",
+        "X64",
+        "ruoyi-qa"
+      ],
+      "timeout-minutes": 20,
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "steps": [
+        {
+          "name": "获取源码",
+          "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "with": {
+            "persist-credentials": false
+          }
+        },
+        {
+          "name": "核对本机准备状态",
+          "shell": "pwsh",
+          "env": {
+            "SELECTED_MODE": "${{ inputs.mode }}"
+          },
+          "run": "# 配置位于checkout目录外；令牌只由本机运行器进程继承。\nif (-not $env:RUOYI_CONFIG_PATH -or -not (Test-Path -LiteralPath $env:RUOYI_CONFIG_PATH)) {\n    throw '本机运行器未准备RUOYI_CONFIG_PATH。'\n}\nif (-not $env:RUOYI_PYTHON_PATH -or -not (Test-Path -LiteralPath $env:RUOYI_PYTHON_PATH)) {\n    throw '本机运行器未准备RUOYI_PYTHON_PATH。'\n}\nif ($env:SELECTED_MODE -eq 'Batch' -and -not $env:RUOYI_TEST_TOKEN) {\n    throw 'Batch需要手工登录后注入本机运行器进程的有效令牌。'\n}"
+        },
+        {
+          "name": "执行隔离接口检查",
+          "shell": "pwsh",
+          "env": {
+            "SELECTED_MODE": "${{ inputs.mode }}"
+          },
+          "run": "# 不输出口令、令牌或完整环境变量。\n& '.\\运行测试.ps1' -Mode $env:SELECTED_MODE -ConfigPath $env:RUOYI_CONFIG_PATH -PythonPath $env:RUOYI_PYTHON_PATH"
+        },
+        {
+          "name": "保存本轮JUnit结果",
+          "if": "always()",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "隔离接口检查结果",
+            "path": "runs/*/结果.xml",
+            "if-no-files-found": "warn",
+            "retention-days": 7
+          }
+        }
+      ]
+    }
+  }
+}

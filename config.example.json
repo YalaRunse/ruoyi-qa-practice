@@ -1,0 +1,8 @@
+{
+  "url": "http://127.0.0.1:18082",
+  "database": "qa_all_请填写当前隔离库",
+  "mysql_container": "ruoyi-practice-mysql-1",
+  "backend_container": "qa-all-backend-请填写当前隔离副本",
+  "dept_id": 105,
+  "role_id": 2
+}

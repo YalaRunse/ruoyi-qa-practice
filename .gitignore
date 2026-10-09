@@ -1,0 +1,12 @@
+# 本机配置、口令、证据与缓存不进入可分享源码。
+*.local.json
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+runs/
+*.sql
+*.log
+*.postman_test_run.json
